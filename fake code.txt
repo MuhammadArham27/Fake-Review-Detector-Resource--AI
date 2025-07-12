@@ -1,0 +1,32 @@
+import requests
+import pandas as pd
+import joblib
+
+# 🔗 iTunes Search API endpoint
+url = 'https://itunes.apple.com/search?term=radiohead&limit=20'
+response = requests.get(url)
+
+if response.status_code == 200:
+    data = response.json()
+    results = data.get('results', [])
+
+    if results:
+        df = pd.DataFrame(results)
+
+        # 🧪 Create review-style text from metadata
+        df['review'] = df.apply(lambda row: f"{row.get('trackName', '')} by {row.get('artistName', '')} from {row.get('collectionName', '')}", axis=1)
+
+        # 📦 Load model and vectorizer
+        model = joblib.load(r'C:\Users\DELL\Desktop\doc\projects 1\model.pkl')
+        vectorizer = joblib.load(r'C:\Users\DELL\Desktop\doc\projects 1\vectorizer.pkl')
+
+        # 🔮 Predict authenticity
+        vectorized = vectorizer.transform(df['review'])
+        df['prediction'] = model.predict(vectorized)
+
+        # 🖨️ Show results
+        print(df[['review', 'prediction']])
+    else:
+        print("⚠️ No results found in the API response.")
+else:
+    print(f"❌ Error fetching data. Status code: {response.status_code}")

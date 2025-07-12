@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  image-rendering: -webkit-optimize-contrast; /* Chrome, Safari */
+  image-rendering: crisp-edges;               /* General */
+  image-rendering: pixelated;                 /* Optional for stylized look */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.card {
+  background: linear-gradient(145deg, #4058a1, #4058a1);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(56, 56, 56, 0.2);
+  padding: 40px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  box-shadow: 0 0 20px rgba(70, 97, 185, 0.4);
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #fda085;
+  border-radius: 12px;
+  resize: none;
+  margin-bottom: 20px;
+  transition: border-color 0.3s;
+}
+
+textarea:focus {
+  border-color: #f6d365;
+  outline: none;
+}
+
+button {
+  background: linear-gradient(to right, #f6d365, #fda085);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#resultBox {
+  margin-top: 20px;
+}
+
+#result {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #444;
+}
+input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #fda085;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+  border-color: #f3f2ed;
+  outline: none;
+}

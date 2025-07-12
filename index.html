@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Review Analyzer With AI</title>
+  <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <img src="logo.jpg.webp" alt="MuhammadTech Logo" style="max-width: 120px; margin-bottom: 1rem;" />
+      <h1>🎨 Review Analyzer With AI</h1>
+      <p class="subtitle">Enter your thoughts and let AI reveal the truth!</p>
+
+      <input type="text" id="productName" placeholder="Product Name..." />
+      <input type="number" id="rating" min="1" max="5" placeholder="Rating (1-5)" />
+      <textarea id="reviewInput" placeholder="Type or paste your review here..."></textarea>
+
+      <button onclick="submitReview()">🔍 Analyze</button>
+
+      <div id="resultBox">
+        <p id="result"></p>
+      </div>
+    </div>
+
+    <footer>
+      <p> Built with ❤️ and AI precision</p>
+    </footer>
+  </div>
+  <script src="indexx.js"></script>
+</body>
+</html>
